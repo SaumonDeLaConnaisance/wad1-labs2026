@@ -21,9 +21,13 @@ const playlist = [
 
 const dashboard = {
   createView(request, response) {
-        logger.info("Dashboard page loading!")
-    logger.debug("Loading the playlist", playlist);
-    response.json(playlist);   
+    logger.info("Dashboard page loading");
+
+    const viewData = {
+      title: "Playlist app dashboard"
+    };
+
+    response.render('dashboard', viewData);
   },
 };
 

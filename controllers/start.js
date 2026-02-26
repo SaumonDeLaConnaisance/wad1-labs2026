@@ -6,14 +6,14 @@ import appStore from "../models/app-store.js";
 const start = {
   createView(request, response) {
     logger.info("Start page loading!");
-    
+
     const viewData = {
-      title: "Welcome to the Playlist app!",
+      title: "Welcome to the Playlist App!",
       info: appStore.getAppInfo()
     };
-    
-    //logger.debug(viewData);
-    response.render('start', viewData);   
+
+    // logger.debug(viewData);
+    response.render('start', viewData);
   },
 };
 
