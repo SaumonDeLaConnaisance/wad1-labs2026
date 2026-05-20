@@ -1,34 +1,31 @@
 'use strict';
 import logger from "../utils/logger.js";
-
-const playlist = [
-  {
-    id: 1,
-    title: "Piano Sonata No. 3",
-    artist: "Beethoven"
-  },
-  {
-    id: 2,
-    title: "Piano Sonata No. 7",
-    artist: "Beethoven"
-  },
-  {
-    id: 3,
-    title: "Piano Sonata No. 10",
-    artist: "Beethoven"
-  }
-];
+import playlistStore from "../models/playlist-store.js";
+import { v4 as uuidv4} from 'uuid';
 
 const dashboard = {
   createView(request, response) {
     logger.info("Dashboard page loading");
-
+    
     const viewData = {
-      title: "Playlist app dashboard"
+      title: "Playlist app dashboard",
+      playlists: playlistStore.getAllPlaylists(),
     };
+
+    logger.debug(viewData.playlists)
 
     response.render('dashboard', viewData);
   },
+
+  addPlaylist(request,response) {
+    const newPlaylist = {
+      id: uuidv4(),
+      title: request.body.title,
+      songs: [],
+    };
+    playlistStore.addPlaylist(newPlaylist);
+    response.redirect('/dashboard');
+  }
 };
 
 export default dashboard;
