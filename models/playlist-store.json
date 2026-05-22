@@ -3,6 +3,7 @@
     {
       "id": "01",
       "title": "Beethoven Sonatas",
+      "rating": 2,
       "songs": [
         {
           "id": "04",
@@ -50,6 +51,12 @@
     {
       "id": "78c9ca1e-4b26-4782-90a2-f1ba0fa1722e",
       "title": "Bach Motets",
+      "songs": []
+    },
+    {
+      "id": "16dab8f0-b1db-4c46-af44-9c4c6740126c",
+      "title": "Bach Cantatas",
+      "date": "2026-05-20T11:18:13.607Z",
       "songs": []
     }
   ]
