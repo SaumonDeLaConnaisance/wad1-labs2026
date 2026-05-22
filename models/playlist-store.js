@@ -26,7 +26,12 @@ const playlistStore = {
 
     addPlaylist(playlist) {
         this.store.addCollection(this.collection, playlist);
-    }
+    },
+
+    editSong(id, songId, updatedSong) {
+        this.store.editItem(this.collection, id, songId, this.array, updatedSong);
+    },
+
 };
 
 export default playlistStore;
